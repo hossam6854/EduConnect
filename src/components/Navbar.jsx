@@ -56,9 +56,14 @@ export default function Navbar() {
           
         
           {!auth.isLoggedIn && (
+            <>
             <Link to="/login" className="hover:text-blue-500 transition">
               Login
             </Link>
+            <Link to="/addStudent" className="hover:text-blue-500 transition">
+              Register
+            </Link>
+            </>
           )}
         </div>
 
@@ -100,6 +105,7 @@ export default function Navbar() {
 
 
           {!auth.isLoggedIn && (
+            <>
             <Link
               to="/login"
               onClick={toggleMenu}
@@ -107,6 +113,14 @@ export default function Navbar() {
               >
               Login
             </Link>
+            <Link
+              to="/addStudent"
+              onClick={toggleMenu}
+              className="block hover:text-blue-500 transition"
+              >
+              Register
+            </Link>
+            </>
           )}
 
         </div>

@@ -2,12 +2,14 @@ import React, { useState, useCallback } from 'react';
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const students = useSelector((state) => state.student.students);
   const professors = useSelector((state) => state.professor.professors);
   const navigate = useNavigate();
   const { login } = useAuth();
+
 
   const [formData, setFormData] = useState({
     username: "",
@@ -165,6 +167,9 @@ export default function Login() {
           >
             Login
           </button>
+          <Link to="/register" className="text-blue-500 hover:underline">
+            Don't have an account? Register
+          </Link>
         </form>
       </div>
     </div>
